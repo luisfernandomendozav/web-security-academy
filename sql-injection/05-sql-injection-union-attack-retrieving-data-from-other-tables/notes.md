@@ -38,5 +38,4 @@ as the administrator user.
 
         Now we have the administrator and the password:
             username: administrator
-	        password: 7p147uglukj4zpgreb9q
-
+  	        password: 7p147uglukj4zpgreb9q
